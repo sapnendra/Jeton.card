@@ -18,10 +18,9 @@ const Page2 = () => {
   const containerBg = useTransform(
     scrollYProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
-    ["#ffffff", "#ffffff", "#ffffff", "#ffffff00", "#ffffff00", "#ffffff00"]
+    ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff00"]
   );
 
-  // Card movement transform (adjust 550 to match distance to wallet)
   const cardY = useTransform(scrollYProgress, [0.4, 1], ["0%", "250%"]);
 
   return (
@@ -45,7 +44,7 @@ const Page2 = () => {
         >
           <motion.div
             style={{ y: cardY }}
-            className="absolute z-999 w-100 h-60 bg-green-400 rounded-xl flex p-5"
+            className="absolute z-999 w-100 h-60 bg-[#ff6448] rounded-xl flex p-5"
           >
             <h1 className="text-[2vw] text-left text-white font-primary tracking-wider">
               Jeton Card
@@ -53,9 +52,9 @@ const Page2 = () => {
           </motion.div>
         </motion.div>
       </div>
-      <div className="h-screen w-full flex items-end relative -top-100 z-12 bg-[#F24325]">
+      <div className="h-screen w-full flex items-end relative -top-100 z-12">
         <div className="flex flex-col items-center justify-end gap-70 mx-auto w-full mb-10 text-center">
-          <div data-scroll data-scroll-speed="0.2" className="sticky top-70">
+          <div data-scroll data-scroll-speed="0.2" className="sticky top-50">
             <img className="h-80 w-110" src="/wallet.webp" alt="" />
           </div>
           <div className="flex flex-col gap-6">
