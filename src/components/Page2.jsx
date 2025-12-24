@@ -18,17 +18,21 @@ const Page2 = () => {
   const containerBg = useTransform(
     scrollYProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
-    ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff00"]
+    ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff00", "#ffffff00"]
   );
 
-  const cardY = useTransform(scrollYProgress, [0.4, 1], ["0%", "250%"]);
+  const cardY = useTransform(scrollYProgress, [0.4, 1], ["0%", "190%"]);
+  const textOpacity = useTransform(scrollYProgress, [0.55, 0.6], [1, 0]);
 
   return (
     <div className="h-[470vh] relative">
       <div className="h-screen sticky top-0 bg-[#F24325]">
-        <h1 className="absolute left-1/2 top-40 text-white -translate-x-1/2 text-[4vw] text-center font-primary leading-[4vw] tracking-wide w-1/2">
+        <motion.h1
+          style={{ opacity: textOpacity }}
+          className="absolute left-1/2 top-40 text-white -translate-x-1/2 text-[4vw] text-center font-primary leading-[4vw] tracking-wide w-1/2"
+        >
           Access your money anywhere, hassle-free
-        </h1>
+        </motion.h1>
       </div>
       <div
         ref={sectionRef}
@@ -40,11 +44,11 @@ const Page2 = () => {
             borderRadius: radius,
             backgroundColor: containerBg,
           }}
-          className="h-[85vh] sticky top-20 w-9/12 mx-auto p-5 rounded-[5vw] flex items-center justify-center"
+          className="h-[80vh] sticky top-30 w-9/12 mx-auto p-5 rounded-[5vw] flex items-center justify-center"
         >
           <motion.div
             style={{ y: cardY }}
-            className="absolute z-999 w-100 h-60 bg-[#ff6448] rounded-xl flex p-5"
+            className="absolute z-999 w-100 h-60 bg-[#f26925] rounded-xl flex p-5"
           >
             <h1 className="text-[2vw] text-left text-white font-primary tracking-wider">
               Jeton Card
@@ -52,9 +56,9 @@ const Page2 = () => {
           </motion.div>
         </motion.div>
       </div>
-      <div className="h-screen w-full flex items-end relative -top-100 z-12">
+      <div className="h-[70vh] w-full flex items-end relative -top-100 z-12">
         <div className="flex flex-col items-center justify-end gap-70 mx-auto w-full mb-10 text-center">
-          <div data-scroll data-scroll-speed="0.2" className="sticky top-50">
+          <div data-scroll data-scroll-speed="0.1" className="sticky top-20">
             <img className="h-80 w-110" src="/wallet.webp" alt="" />
           </div>
           <div className="flex flex-col gap-6">
