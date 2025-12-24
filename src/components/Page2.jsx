@@ -14,7 +14,15 @@ const Page2 = () => {
   // Scroll-linked animations
   const width = useTransform(scrollYProgress, [0, 1], ["75%", "25%"]);
   const radius = useTransform(scrollYProgress, [0, 1], ["5vw", "2vw"]);
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [1, 1, 0]);
+  // Container fade transforms
+  const containerBg = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 0.6, 0.8, 1],
+    ["#ffffff", "#ffffff", "#ffffff", "#ffffff00", "#ffffff00", "#ffffff00"]
+  );
+
+  // Card movement transform (adjust 550 to match distance to wallet)
+  const cardY = useTransform(scrollYProgress, [0.4, 1], ["0%", "250%"]);
 
   return (
     <div className="h-[470vh] relative">
@@ -28,11 +36,18 @@ const Page2 = () => {
         className="h-[300vh] w-full relative -top-100 z-12 bg-[#F24325]"
       >
         <motion.div
-          style={{ width, borderRadius: radius, opacity }}
-          className="bg-white border border-white/50 h-[85vh] sticky top-20 w-9/12 mx-auto p-5 rounded-[5vw] flex items-center justify-center"
+          style={{
+            width,
+            borderRadius: radius,
+            backgroundColor: containerBg,
+          }}
+          className="h-[85vh] sticky top-20 w-9/12 mx-auto p-5 rounded-[5vw] flex items-center justify-center"
         >
-          <motion.div data-scroll data-scroll-speed="0" className="absolute z-999 w-100 h-60 bg-secondary rounded-xl flex items-center justify-center">
-            <h1 className="text-[2vw] text-white font-primary tracking-wider">
+          <motion.div
+            style={{ y: cardY }}
+            className="absolute z-999 w-100 h-60 bg-green-400 rounded-xl flex p-5"
+          >
+            <h1 className="text-[2vw] text-left text-white font-primary tracking-wider">
               Jeton Card
             </h1>
           </motion.div>
