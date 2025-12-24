@@ -12,6 +12,7 @@ import Page6 from "./components/Page6";
 import Page7 from "./components/Page7";
 import Page8 from "./components/Page8";
 import Dets from "./components/Dets";
+import Page9 from "./components/Page9";
 
 const App = () => {
   const locomotiveScroll = new LocomotiveScroll();
@@ -38,6 +39,7 @@ const App = () => {
         <Page6 />
         <Page7 />
         <Page8 />
+        <Page9 />
       </div>
     </div>
   );

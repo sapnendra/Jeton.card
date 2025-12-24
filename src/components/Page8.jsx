@@ -1,11 +1,36 @@
-import React from 'react'
+import React, { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+
 
 const Page8 = () => {
-  return (
-    <div data-scroll data-scroll-speed="0.2" className='h-screen'>
-        
-    </div>
-  )
-}
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"],
+  });
 
-export default Page8
+  const letters = ["J", "e", "t", "o", "n"];
+
+  const transforms = [];
+  for (let i = 0; i < letters.length; i++) {
+    const start = i * 0.04;
+    const end = Math.min(1, start + 0.45);
+    const y = useTransform(scrollYProgress, [start, end], [50, 0]);
+    const opacity = useTransform(scrollYProgress, [start, end], [1, 1]);
+    transforms.push({ y, opacity });
+  }
+
+  return (
+    <motion.div ref={containerRef} className="h-[70vh] flex items-center justify-center">
+      <div className="flex gap-5 text-[35vw] font-primary text-secondary">
+        {letters.map((ltr, i) => (
+          <motion.span key={i} style={transforms[i]} className="inline-block">
+            {ltr}
+          </motion.span>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
+
+export default Page8;

@@ -21,7 +21,7 @@ const Page2 = () => {
     ["#ffffff", "#ffffff", "#ffffff", "#ffffff", "#ffffff00", "#ffffff00"]
   );
 
-  const cardY = useTransform(scrollYProgress, [0.4, 1], ["0%", "190%"]);
+  const cardY = useTransform(scrollYProgress, [0.4, 1], ["0%", "180%"]);
   const textOpacity = useTransform(scrollYProgress, [0.55, 0.6], [1, 0]);
 
   return (
@@ -58,7 +58,7 @@ const Page2 = () => {
       </div>
       <div className="h-[70vh] w-full flex items-end relative -top-100 z-12">
         <div className="flex flex-col items-center justify-end gap-70 mx-auto w-full mb-10 text-center">
-          <div data-scroll data-scroll-speed="0.1" className="sticky top-20">
+          <div data-scroll data-scroll-speed="0.1" className="sticky top-10">
             <img className="h-80 w-110" src="/wallet.webp" alt="" />
           </div>
           <div className="flex flex-col gap-6">

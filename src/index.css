@@ -10,6 +10,11 @@
   display: none;
 }
 
+::selection {
+  background-color: #f24425ba;
+  color: #ffffff;
+}
+
 @theme {
   --font-primary: "sequalsans-md", sans-serif;
 
