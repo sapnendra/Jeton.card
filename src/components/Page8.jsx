@@ -16,7 +16,7 @@ const Page8 = () => {
     const start = i * 0.04;
     const end = Math.min(1, start + 0.45);
     const y = useTransform(scrollYProgress, [start, end], [50, 0]);
-    const opacity = useTransform(scrollYProgress, [start, end], [1, 1]);
+    const opacity = useTransform(scrollYProgress, [start, end], [0.8, 1]);
     transforms.push({ y, opacity });
   }
 

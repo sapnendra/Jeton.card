@@ -58,7 +58,7 @@ const Page2 = () => {
       </div>
       <div className="h-[70vh] w-full flex items-end relative -top-100 z-12">
         <div className="flex flex-col items-center justify-end gap-70 mx-auto w-full mb-10 text-center">
-          <div data-scroll data-scroll-speed="0.1" className="sticky top-10">
+          <div data-scroll data-scroll-speed="0.1" className="sticky top-0">
             <img className="h-80 w-110" src="/wallet.webp" alt="" />
           </div>
           <div className="flex flex-col gap-6">

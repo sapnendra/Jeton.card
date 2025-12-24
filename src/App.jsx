@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "./components/Navbar";
 import HeroBottom from "./components/HeroBottom";
 import Page2 from "./components/Page2";
@@ -15,11 +15,17 @@ import Dets from "./components/Dets";
 import Page9 from "./components/Page9";
 
 const App = () => {
-  const locomotiveScroll = new LocomotiveScroll();
+  useEffect(() => {
+    const locomotiveScroll = new LocomotiveScroll();
+  }, []);
   return (
     <div className="relative">
       <BottomSticky />
-      <div data-scroll data-scroll-speed="-0.2" className="h-screen absolute top-0 left-0 inset-0">
+      <div
+        data-scroll
+        data-scroll-speed="-0.2"
+        className="h-screen absolute top-0 left-0 inset-0"
+      >
         <video
           className="h-full w-full object-cover"
           src="https://jetonbucket.fra1.cdn.digitaloceanspaces.com/jeton/2024-08-12T14-00-46.569Z-jeton-jetoncard-hd.mp4#t=0.01"
