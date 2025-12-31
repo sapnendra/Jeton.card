@@ -55,7 +55,7 @@ const Page2 = () => {
       <div className="h-[70vh] w-full flex items-center relative -top-100">
         <div className="flex flex-col items-center justify-center gap-70 mx-auto w-full text-center">
           <div className="relative">
-            <img className="h-80 w-110 " src="/wallet.webp" alt="" />
+            <img className="h-80 w-110" src="/wallet.webp" alt="" />
             <img
               className="w-80 w-110 object-contain absolute top-40 z-1001"
               src="/download.svg"
